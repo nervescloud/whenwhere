@@ -20,7 +20,7 @@ defmodule Whenwhere.MixProject do
       ],
       package: [
         name: :whenwhere,
-        licenses: ["MIT"],
+        licenses: ["Apache"],
         links: %{"GitHub" => "https://github.com/nervescloud/whenwhere"}
       ]
     ]
@@ -38,6 +38,8 @@ defmodule Whenwhere.MixProject do
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
-    []
+    [
+      {:ex_doc, "~> 0.31", only: :dev, runtime: false}
+    ]
   end
 end
