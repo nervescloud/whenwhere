@@ -20,7 +20,7 @@ defmodule Whenwhere.MixProject do
       ],
       package: [
         name: :whenwhere,
-        licenses: ["Apache"],
+        licenses: ["Apache-2.0"],
         links: %{"GitHub" => "https://github.com/nervescloud/whenwhere"}
       ]
     ]
