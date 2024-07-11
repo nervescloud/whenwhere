@@ -6,8 +6,23 @@ defmodule Whenwhere.MixProject do
       app: :whenwhere,
       version: "0.1.0",
       elixir: "~> 1.15",
+      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      # Docs
+      name: "Whenwhere",
+      description: "A small library for Nerves devices to check in with a Nerves Project hosted endpoint to help find themselves.",
+      source_url: "https://github.com/nervescloud/whenwhere",
+      docs: [
+        # The main page in the docs
+        main: "readme",
+        extras: ["README.md"]
+      ],
+      package: [
+        name: :whenwhere,
+        licenses: ["MIT"],
+        links: %{"GitHub" => "https://github.com/nervescloud/whenwhere"}
+      ]
     ]
   end
 
@@ -18,11 +33,11 @@ defmodule Whenwhere.MixProject do
     ]
   end
 
+  defp elixirc_paths(:test), do: ["lib", "test/support"]
+  defp elixirc_paths(_), do: ["lib"]
+
   # Run "mix help deps" to learn about dependencies.
   defp deps do
-    [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-    ]
+    []
   end
 end
