@@ -1,6 +1,16 @@
 # Whenwhere
 
-A small library for Nerves devices to check in with a Nerves Project hosted endpoint to help get IP address, rough geo-location and time information. It can also be used to detect if you are online or within a captive portal for hotel WiFi, probably.
+A small utility for fetching data from a Whenwhere server.
+
+The primary task of Whenwhere is to get the rough time.
+A more reliable and resilient option to NTP.
+
+As a bonus and due to cheap AWS functionality it also includes some GeoIP
+functionality. Best effort information about the location of the device.
+
+You can set up your own using the information
+[available here](https://github.com/nerves-networking/whenwhere).
+If you do set one up and are willing to share it, let us know.
 
 ## Installation
 

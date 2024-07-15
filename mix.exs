@@ -11,7 +11,8 @@ defmodule Whenwhere.MixProject do
       deps: deps(),
       # Docs
       name: "Whenwhere",
-      description: "A small library for Nerves devices to check in with a Nerves Project hosted endpoint to help find themselves.",
+      description:
+        "A small library for Nerves devices to check in with a Nerves Project hosted endpoint to help find themselves.",
       source_url: "https://github.com/nervescloud/whenwhere",
       docs: [
         # The main page in the docs
