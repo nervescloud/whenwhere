@@ -1,0 +1,9 @@
+# v0.1.1
+
+First real version.
+
+- Implement nonce support
+- Implement multiple servers to check
+- Parse responses to atoms and safely handle extra keys
+- Parse latitude, longitude and now fields to proper data types (float and DateTime)
+- Documented the module

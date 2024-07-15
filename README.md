@@ -33,3 +33,20 @@ Whenwhere.asks()
 # Without SSL, no security, but works if your clock is borked
 Whenwhere.ask()
 ```
+
+Typical response:
+
+```elixir
+{:ok,
+ %{
+   extra: %{"country" => "SE"},
+   now: ~U[2024-07-15 09:18:14.620Z],
+   address: "REDACTED_IP:REDACTED_PORT",
+   time_zone: "Europe/Stockholm",
+   city: "Gothenburg",
+   country_region: "O",
+   # Not redacted because this is an endpoint in Gothenburg, a nearby city, not where I live :D
+   latitude: 57.7065,
+   longitude: 11.967
+ }}
+```
