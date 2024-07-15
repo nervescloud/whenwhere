@@ -29,7 +29,7 @@ defmodule Whenwhere.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :sasl, :inets, :ssl]
+      extra_applications: [:inets, :ssl]
     ]
   end
 

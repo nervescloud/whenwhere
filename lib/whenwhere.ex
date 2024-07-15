@@ -5,9 +5,6 @@ defmodule Whenwhere do
 
   @default_whenwhere_url "whenwhere.nerves-project.org/"
   def ask(protocol \\ "http://") do
-    Application.ensure_started(:inets)
-    Application.ensure_started(:sasl)
-
     request_headers = [
       {~c"user-agent", ~c"whenwhere"},
       {~c"content-type", ~c"application/x-erlang-binary"}
