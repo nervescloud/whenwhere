@@ -7,3 +7,9 @@ First real version.
 - Parse responses to atoms and safely handle extra keys
 - Parse latitude, longitude and now fields to proper data types (float and DateTime)
 - Documented the module
+
+# v0.1.2
+
+- Support back to Elixir 1.12 and OTP 24
+- Produce a warning about missing SSL verification on OTP 24
+- Add :logger as a dependency to prevent warnings during dependency compilation
