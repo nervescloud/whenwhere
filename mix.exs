@@ -5,7 +5,7 @@ defmodule Whenwhere.MixProject do
     [
       app: :whenwhere,
       version: "0.1.1",
-      elixir: "~> 1.15",
+      elixir: "~> 1.12",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -30,7 +30,7 @@ defmodule Whenwhere.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:inets, :ssl]
+      extra_applications: [:inets, :ssl, :logger]
     ]
   end
 

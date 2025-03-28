@@ -43,7 +43,7 @@ defmodule Whenwhere do
     ssl =
       case protocol do
         "http://" -> [verify: :verify_none]
-        "https://" -> [cacerts: :public_key.cacerts_get()]
+        "https://" -> https_verify()
       end
 
     Enum.reduce_while(urls, {:error, :no_servers_specified}, fn url, _ ->
@@ -207,5 +207,18 @@ defmodule Whenwhere do
   defp make_nonce do
     symbols = ~c(0123456789abcdefghijklmnopqrstuvwxyz)
     for _ <- 1..31, into: "", do: <<Enum.random(symbols)>>
+  end
+
+  case Integer.parse(to_string(:erlang.system_info(:otp_release))) do
+    {otp_version, _} when otp_version < 25 ->
+      def https_verify do
+        Logger.warning("Not verifying TLS connections before OTP 24.")
+        [verify: :verify_none]
+      end
+
+    _ ->
+      def https_verify do
+        [cacerts: :public_key.cacerts_get()]
+      end
   end
 end
