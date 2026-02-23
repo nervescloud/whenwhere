@@ -50,3 +50,20 @@ Typical response:
    longitude: 11.967
  }}
 ```
+
+## NervesTime RTC
+
+`Whenwhere.FakeTimeClock` implements the `NervesTime.RealTimeClock` behaviour,
+acting as a fake real-time clock for devices without an RTC chip. It fetches
+the current time from a Whenwhere server instead of reading hardware.
+
+To use it, add both `:whenwhere` and `:nerves_time` to your dependencies and
+configure `nerves_time`:
+
+```elixir
+# Plain HTTP (works even when the device clock is wrong)
+config :nerves_time, rtc: Whenwhere.FakeTimeClock
+
+# HTTPS with CA verification
+config :nerves_time, rtc: {Whenwhere.FakeTimeClock, protocol: "https://"}
+```
