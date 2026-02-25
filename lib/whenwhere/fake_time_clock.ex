@@ -41,6 +41,17 @@ defmodule Whenwhere.FakeTimeClock do
         Logger.warning("Whenwhere.FakeTimeClock failed to get time: #{inspect(reason)}")
         {:unset, state}
     end
+  rescue
+    e ->
+      Logger.warning("Whenwhere.FakeTimeClock crashed getting time: #{inspect(e)}")
+      {:unset, state}
+  catch
+    kind, reason ->
+      Logger.warning(
+        "Whenwhere.FakeTimeClock caught #{kind} getting time: #{inspect(reason)}"
+      )
+
+      {:unset, state}
   end
 
   @impl NervesTime.RealTimeClock
